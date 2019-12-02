@@ -22,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
         ListView lvFruits = findViewById(R.id.lvFruits);
 
 //        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, FRUITS);
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.fruits_res, android.R.layout.simple_list_item_1);
+//        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.fruits_res, android.R.layout.simple_list_item_1);
+//        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.fruits_res, R.layout.mytextview);
+//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.mylayout, FRUITS);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.mylayout, R.id.tvFruits, FRUITS);
 
         lvFruits.setAdapter(adapter);
 
@@ -36,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
 //                String[] resFruits = getResources().getStringArray(R.array.fruits_res);
 //                Toast.makeText(getApplicationContext(), resFruits[position], Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(getApplicationContext(), adapter.getItem(position), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), adapter.getItem(position), Toast.LENGTH_SHORT).show();
+
+                TextView tvFruits = view.findViewById(R.id.tvFruits);
+                Toast.makeText(getApplicationContext(), tvFruits.getText(), Toast.LENGTH_SHORT).show();
             }
         });
 
